@@ -13,5 +13,7 @@ public class IKCtrlEditor : Editor {
 		IKCtrl ctrl = (IKCtrl)target;
 
 		ctrl.rightHandIKWeight = EditorGUILayout.Slider("RightHandIKWeight",ctrl.rightHandIKWeight, 0f, 1f);
+		ctrl.leftHandIKWeight = EditorGUILayout.Slider("LeftHandIKWeight", ctrl.leftHandIKWeight, 0f, 1f);
+		
 	}
 }

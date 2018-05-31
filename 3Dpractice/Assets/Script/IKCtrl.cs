@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class IKCtrl : MonoBehaviour {
 
-	public float rightHandIKWeight;
+	public float rightHandIKWeight, leftHandIKWeight;
 
-	public Transform targetRightHand, targetRightHint;
+	public Transform targetRightHand, targetRightHint, targetLeftHand;
 
 
 	private Animator anim;
@@ -27,8 +27,12 @@ public class IKCtrl : MonoBehaviour {
 		anim.SetIKRotationWeight(AvatarIKGoal.RightHand, rightHandIKWeight);
 		anim.SetIKPosition(AvatarIKGoal.RightHand, targetRightHand.position);
 		anim.SetIKRotation(AvatarIKGoal.RightHand, targetRightHand.rotation);
-		anim.SetIKHintPosition(AvatarIKHint.RightElbow, targetRightHint.position);
-		anim.SetIKHintPositionWeight(AvatarIKHint.RightElbow, rightHandIKWeight);
+        //anim.SetIKHintPosition(AvatarIKHint.RightElbow, targetRightHint.position);
+        //anim.SetIKHintPositionWeight(AvatarIKHint.RightElbow, rightHandIKWeight);
+        anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, leftHandIKWeight);
+        anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, leftHandIKWeight);
+        anim.SetIKPosition(AvatarIKGoal.LeftHand, targetLeftHand.position);
+        anim.SetIKRotation(AvatarIKGoal.LeftHand, targetLeftHand.rotation);
 
-	}
+    }
 }
